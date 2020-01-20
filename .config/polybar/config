@@ -468,7 +468,7 @@ interval = 2
 ;   <ramp-swap-free>
 ; format = " <bar-used>  <ramp-swap-used>"
 
-format = " <bar-used>"
+format = "<label>"
 
 ramp-swap-used-0 = ▁
 ramp-swap-used-1 = ▂
@@ -507,7 +507,7 @@ ramp-swap-used-underline = ${colors.foreground-alt}
 ;   %gb_swap_free%
 ;   %gb_swap_used%
 
-label = " %gb_used% / %gb_total%"
+label = " %percentage_used%%"
 
 
 ; Only applies if <bar-used> is used
@@ -516,7 +516,7 @@ bar-used-indicator =
 bar-used-width = 10
 bar-used-fill = ━
 bar-used-empty = ━
-bar-used-indicator-foreground = ${colors.foreground-alt}
+bar-used-indicator-foreground = ${colors.foreground}
 bar-used-empty-foreground = ${colors.foreground}
 bar-used-foreground-0 = ${colors.adapta-green}
 bar-used-foreground-1 = ${colors.adapta-yellow}
@@ -905,13 +905,13 @@ label =  %output:0:150:%
 type = internal/alsa
 format-volume = "<label-volume>  <bar-volume>"
 format-volume-underline = ${colors.foreground-alt}
-
+master-mixer = Master
 label-volume = " "
 label-volume-foreground = ${colors.foreground}
 
 label-muted = muted
 
-bar-volume-width = 10
+bar-volume-width = 5
 bar-volume-foreground-0 = ${colors.third}
 bar-volume-foreground-1 = ${colors.third}
 bar-volume-foreground-2 = ${colors.third}
@@ -920,7 +920,7 @@ bar-volume-foreground-4 = ${colors.third}
 bar-volume-foreground-5 = ${colors.third}
 bar-volume-foreground-6 = ${colors.third}
 bar-volume-gradient = false
-bar-volume-indicator = ━
+bar-volume-indicator = 
 bar-volume-indicator-font = 2
 bar-volume-fill = ━
 bar-volume-fill-font = 2
