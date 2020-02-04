@@ -115,9 +115,9 @@ font-2 = "Noto Sans Mono:size=15;4"
 font-3 = "Bitstream Vera Sans:style=Roman:size=15;4"
 
 
-modules-left = cpu-graph volume memory1
-modules-center = ewmh 
-modules-right = discord filesystem battery date powermenu
+modules-left = ewmh
+modules-center = cpu-graph 
+modules-right = discord volume memory1 filesystem battery date powermenu
 
 tray-detached = false
 tray-offset-x = 0
@@ -255,9 +255,9 @@ font-2 = "Noto Sans Mono:size=15;4"
 font-3 = "Bitstream Vera Sans:style=Roman:size=15;4"
 
 
-modules-left = cpu-graph volume memory1
-modules-center = bspwm
-modules-right = discord filesystem battery date powermenu
+modules-left = bspwm
+modules-center = cpu-graph 
+modules-right = discord volume memory1 filesystem battery date powermenu
 
 tray-detached = false
 tray-offset-x = 0
