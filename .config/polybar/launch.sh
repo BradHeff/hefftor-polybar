@@ -20,10 +20,10 @@ case $desktop in
     i3)
     if type "xrandr" > /dev/null; then
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload mainbar-i3 -c ~/.config/polybar/config &
+        MONITOR=$m polybar --reload mainbar-i3 -c ~/.config/polybar/config_top_fixed &
       done
     else
-    polybar --reload mainbar-i3 -c ~/.config/polybar/config &
+    polybar --reload mainbar-i3 -c ~/.config/polybar/config_top_fixed &
     fi
     # second polybar at bottom
     # if type "xrandr" > /dev/null; then
@@ -38,10 +38,10 @@ case $desktop in
     openbox)
     if type "xrandr" > /dev/null; then
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload mainbar-openbox -c ~/.config/polybar/config &
+        MONITOR=$m polybar --reload mainbar-openbox -c ~/.config/polybar/config_top_fixed &
       done
     else
-    polybar --reload mainbar-openbox -c ~/.config/polybar/config &
+    polybar --reload mainbar-openbox -c ~/.config/polybar/config_top_fixed &
     fi
     # second polybar at bottom
     # if type "xrandr" > /dev/null; then
@@ -56,10 +56,10 @@ case $desktop in
     bspwm)
     if type "xrandr" > /dev/null; then
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload mainbar-bspwm -c ~/.config/polybar/config &
+        MONITOR=$m polybar --reload mainbar-bspwm -c ~/.config/polybar/config_top_fixed &
       done
     else
-    polybar --reload mainbar-bspwm -c ~/.config/polybar/config &
+    polybar --reload mainbar-bspwm -c ~/.config/polybar/config_top_fixed &
     fi
     # second polybar at bottom
     # if type "xrandr" > /dev/null; then
@@ -74,10 +74,10 @@ case $desktop in
     herbstluftwm)
     if type "xrandr" > /dev/null; then
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload mainbar-herbstluftwm -c ~/.config/polybar/config &
+        MONITOR=$m polybar --reload mainbar-herbstluftwm -c ~/.config/polybar/config_top_fixed &
       done
     else
-    polybar --reload mainbar-herbstluftwm -c ~/.config/polybar/config &
+    polybar --reload mainbar-herbstluftwm -c ~/.config/polybar/config_top_fixed &
     fi
     # second polybar at bottom
     # if type "xrandr" > /dev/null; then
@@ -92,10 +92,10 @@ case $desktop in
     xmonad)
     if [ $count = 1 ]; then
       m=$(xrandr --query | grep " connected" | cut -d" " -f1)
-      MONITOR=$m polybar --reload mainbar-xmonad -c ~/.config/polybar/config &
+      MONITOR=$m polybar --reload mainbar-xmonad -c ~/.config/polybar/config_top_fixed &
     else
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload mainbar-xmonad -c ~/.config/polybar/config &
+        MONITOR=$m polybar --reload mainbar-xmonad -c ~/.config/polybar/config_top_fixed &
       done
     fi
     # second polybar at bottom
