@@ -124,8 +124,6 @@ tray-scale = 1.0
 tray-position = right
 tray-background = ${colors.background}
 
-scroll-up = herbstclient use_index -1
-scroll-down = herbstclient use_index +1
 
 #i3: Make the bar appear below windows
 ;wm-restack = i3

@@ -124,8 +124,6 @@ modules-right = discord filesystem battery date powermenu
 ;tray-position = right
 ;tray-background = ${colors.background}
 
-scroll-up = herbstclient use_index -1
-scroll-down = herbstclient use_index +1
 
 #i3: Make the bar appear below windows
 ;wm-restack = i3
