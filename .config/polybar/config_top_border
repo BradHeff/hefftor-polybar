@@ -62,6 +62,193 @@ volume-med = #ebcb8b
 volume-max = #bf616a
 ; =======================
 
+
+
+################################################################################
+################################################################################
+############                  MAINBAR-i3                  ############
+################################################################################
+################################################################################
+[bar/mainbar-i3]
+;https://github.com/jaagr/polybar/wiki/Configuration
+
+monitor = ${env:MONITOR}
+;monitor = DisplayPort-0
+;monitor-fallback = HDMI1
+width = 100%
+height = 30
+offset-x = 0
+offset-y = 1%
+radius = 10
+
+fixed-center = true
+bottom = false
+separator = 
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+
+;border-size = 2
+;border-top-size = 3
+;border-bottom-size = 0
+border-left-size  = 150
+border-right-size = 150
+border-color = #00000000
+
+padding-left = 5
+padding-right = 5
+
+module-margin-left = 3
+module-margin-right = 3
+
+;https://github.com/jaagr/polybar/wiki/Fonts
+font-0 = "Bitstream Vera Sans:style=Roman:size=10;2"
+font-1 = "FontAwesome:size=11;3"
+font-2 = "Noto Sans Mono:size=15;4"
+font-3 = "Bitstream Vera Sans:style=Roman:size=15;4"
+
+
+modules-left = i3
+modules-center = cpu-graph 
+modules-right = discord volume memory1 filesystem battery date powermenu
+
+;tray-detached = false
+;tray-offset-x = 0
+;tray-offset-y = 0
+;tray-padding = 2
+;tray-maxsize = 20
+;tray-scale = 1.0
+;tray-position = right
+;tray-background = ${colors.background}
+
+scroll-up = herbstclient use_index -1
+scroll-down = herbstclient use_index +1
+
+#i3: Make the bar appear below windows
+;wm-restack = i3
+;override-redirect = true
+
+; Enable support for inter-process messaging
+; See the Messaging wiki page for more details.
+enable-ipc = true
+
+; Fallback click handlers that will be called if
+; there's no matching module handler found.
+click-left =
+click-middle =
+click-right =
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+double-click-left =
+double-click-middle =
+double-click-right =
+
+; Requires polybar to be built with xcursor support (xcb-util-cursor)
+; Possible values are:
+; - default   : The default pointer as before, can also be an empty string (default)
+; - pointer   : Typically in the form of a hand
+; - ns-resize : Up and down arrows, can be used to indicate scrolling
+cursor-click =
+cursor-scroll =
+
+
+################################################################################
+################################################################################
+############                         MAINBAR-I3-EXTRA               ############
+################################################################################
+################################################################################
+
+[bar/mainbar-i3-extra]
+;https://github.com/jaagr/polybar/wiki/Configuration
+
+monitor = ${env:MONITOR}
+;monitor-fallback = HDMI1
+monitor-strict = false
+override-redirect = false
+bottom = true
+fixed-center = true
+width = 100%
+height = 30
+;offset-x = 1%
+;offset-y = 1%
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+; Background gradient (vertical steps)
+;   background-[0-9]+ = #aarrggbb
+;background-0 =
+
+radius = 0.0
+line-size = 2
+line-color = #000000
+
+border-size = 0
+;border-left-size = 25
+;border-right-size = 25
+;border-top-size = 0
+;border-bottom-size = 25
+border-color = #000000
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 3
+module-margin-right = 3
+
+;https://github.com/jaagr/polybar/wiki/Fonts
+font-0 = "Noto Sans:size=10;0"
+font-1 = "FontAwesome:size=10;0"
+font-2 = "Noto Sans:size=10;0"
+font-3 = "Noto Sans Mono:size=10;0"
+
+modules-left = load-average
+modules-center = networkspeeddown networkspeedup
+modules-right = filesystem
+
+separator = |
+
+;dim-value = 1.0
+
+;tray-detached = false
+;tray-offset-x = 0
+;tray-offset-y = 0
+;tray-padding = 2
+;tray-maxsize = 20
+;tray-scale = 1.0
+;tray-position = right
+;tray-background = ${colors.background}
+
+#i3: Make the bar appear below windows
+;wm-restack = i3
+;override-redirect = true
+
+; Enable support for inter-process messaging
+; See the Messaging wiki page for more details.
+enable-ipc = true
+
+; Fallback click handlers that will be called if
+; there's no matching module handler found.
+click-left =
+click-middle =
+click-right =
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+double-click-left =
+double-click-middle =
+double-click-right =
+
+; Requires polybar to be built with xcursor support (xcb-util-cursor)
+; Possible values are:
+; - default   : The default pointer as before, can also be an empty string (default)
+; - pointer   : Typically in the form of a hand
+; - ns-resize : Up and down arrows, can be used to indicate scrolling
+cursor-click =
+cursor-scroll =
+
 ################################################################################
 ################################################################################
 ############                  MAINBAR-HERBSTLUFTWM                  ############
@@ -334,6 +521,126 @@ modules-right = filesystem
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
 
+################################################################################
+################################################################################
+############                       MODULE I3                        ############
+################################################################################
+################################################################################
+
+[module/i3]
+;https://github.com/jaagr/polybar/wiki/Module:-i3
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = false
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+index-sort = false
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = true
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+wrapping-scroll = false
+
+; Set the scroll cycle direction
+; Default: true
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces
+; containing 'code' in the label
+; Default: false
+fuzzy-match = false
+
+;extra icons to choose from
+;http://fontawesome.io/cheatsheet/
+;       v     
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = " "
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-foreground = #000000
+label-mode-background = #FFBB00
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+; focused = Active workspace on focused monitor
+label-focused = 
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.third}
+;label-focused-underline = #6790eb
+label-focused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+; unfocused = Inactive workspace on any monitor
+label-unfocused = •
+label-unfocused-padding = 2
+label-unfocused-background = ${colors.background}
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-underline =
+
+; visible = Active workspace on unfocused monitor
+label-visible = 
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${colors.third}
+label-visible-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+; urgent = Workspace with urgency hint set
+label-urgent = 
+label-urgent-background = ${self.label-focused-background}
+label-urgent-foreground = ${colors.alert}
+label-urgent-padding = 2
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 
 ################################################################################
 ################################################################################
