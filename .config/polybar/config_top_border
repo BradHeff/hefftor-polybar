@@ -922,20 +922,20 @@ label = %time%
 
 #################################################################
 
-![module/discord]
-!type = custom/script
-!exec = echo "  Discord"
-!;exec = echo " "
-!interval = 1
-!tail = true
-!format-foreground = ${colors.foreground}
-!format-background = ${colors.background}
-!format-prefix-foreground = #738adb
-!format-underline = ${colors.foreground-alt}
-!click-left = discord &
-!click-right = killall Discord | killall Discord | killall telegram-deskto
-!format-prefix = ""
-!label = %output%
+;[module/discord]
+;type = custom/script
+;exec = echo "  Discord"
+;;exec = echo " "
+;interval = 1
+;tail = true
+;format-foreground = ${colors.foreground}
+;format-background = ${colors.background}
+;format-prefix-foreground = #738adb
+;format-underline = ${colors.foreground-alt}
+;click-left = discord &
+;click-right = killall Discord | killall Discord | killall telegram-deskto
+;format-prefix = ""
+;label = %output%
 
 [module/discord]
 type = custom/menu
@@ -1317,7 +1317,7 @@ format-background = ${colors.background}
 [module/powermenu]
 type = custom/script
 exec = echo ""
-!;exec = echo " "
+;;exec = echo " "
 interval = 1
 tail = true
 format-foreground = ${colors.foreground}
@@ -1327,28 +1327,28 @@ format-underline = ${colors.foreground-alt}
 click-left = hefflogout &
 label = %output%
 
-![module/powermenu]
-!type = custom/menu
+;[module/powermenu]
+;type = custom/menu
 
-!format-spacing = 1
+;format-spacing = 1
 
-!label-open = 
-!label-close = 
-!label-close-foreground = ${colors.foreground}
-!label-separator = |
-!label-separator-foreground = ${colors.foreground}
+;label-open = 
+;label-close = 
+;label-close-foreground = ${colors.foreground}
+;label-separator = |
+;label-separator-foreground = ${colors.foreground}
 
-!menu-0-0 = 
-!menu-0-0-exec = betterlockscreen -l dimblur && sleep 1
-!menu-0-1 = 
-!menu-0-1-exec = systemctl reboot
-!menu-0-2 = 
-!menu-0-2-exec = betterlockscreen -l dimblur && sleep 1 && systemctl suspend
-!menu-0-3 = 
-!menu-0-3-exec = systemctl poweroff
+;menu-0-0 = 
+;menu-0-0-exec = betterlockscreen -l dimblur && sleep 1
+;menu-0-1 = 
+;menu-0-1-exec = systemctl reboot
+;menu-0-2 = 
+;menu-0-2-exec = betterlockscreen -l dimblur && sleep 1 && systemctl suspend
+;menu-0-3 = 
+;menu-0-3-exec = systemctl poweroff
 
 
-!!format-background = ${colors.background}
-!format-foreground = ${colors.foreground}
-!format-underline = ${colors.foreground-alt}
-!format-padding = 1
+;;format-background = ${colors.background}
+;format-foreground = ${colors.foreground}
+;format-underline = ${colors.foreground-alt}
+;format-padding = 1
