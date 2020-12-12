@@ -9,7 +9,7 @@
 ;   https://github.com/jaagr/polybar/wiki/Configuration
 ;   https://github.com/jaagr/polybar/wiki/Formatting
 ;
-;===================================================== 
+;=====================================================
 
 [global/wm]
 ;https://github.com/jaagr/polybar/wiki/Configuration#global-wm-settings
@@ -78,8 +78,8 @@ monitor = ${env:MONITOR}
 width = 100%
 height = 30
 offset-x = 0
-offset-y = 1%
-radius = 10
+offset-y = 0
+radius = 0
 
 fixed-center = true
 bottom = false
@@ -94,8 +94,8 @@ line-color = #f00
 ;border-size = 2
 ;border-top-size = 3
 ;border-bottom-size = 0
-border-left-size  = 150
-border-right-size = 150
+border-left-size  = 0
+border-right-size = 0
 border-color = #00000000
 
 padding-left = 5
@@ -115,14 +115,14 @@ modules-left = i3
 modules-center = cpu-graph 
 modules-right = discord volume memory1 filesystem battery date powermenu
 
-;tray-detached = false
-;tray-offset-x = 0
-;tray-offset-y = 0
-;tray-padding = 2
-;tray-maxsize = 20
-;tray-scale = 1.0
-;tray-position = right
-;tray-background = ${colors.background}
+tray-detached = false
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 2
+tray-maxsize = 20
+tray-scale = 1.0
+tray-position = right
+tray-background = ${colors.background}
 
 
 #i3: Make the bar appear below windows
@@ -257,11 +257,12 @@ cursor-scroll =
 monitor = ${env:MONITOR}
 ;monitor = DisplayPort-0
 ;monitor-fallback = HDMI1
-width = 95%
-height = 33
-offset-x = 47
-offset-y = 10
+width = 100%
+height = 30
+offset-x = 0
+offset-y = 0
 radius = 0
+
 fixed-center = true
 bottom = false
 separator = 
@@ -272,19 +273,19 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-wm-restack = bspwm
+;wm-restack = bspwm
 override-redirect = true
 
 ; Enable support for inter-process messaging
 ; See the Messaging wiki page for more details.
 enable-ipc = true
 
-border-size = 2
-;border-left-size  = 0
-;border-right-size = 0
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = ${colors.foreground}
+;border-size = 2
+;border-top-size = 3
+;border-bottom-size = 0
+border-left-size  = 0
+border-right-size = 0
+border-color = #00000000
 
 padding-left = 5
 padding-right = 5
@@ -327,11 +328,13 @@ scroll-down = herbstclient use_index +1
 [bar/mainbar-herbstluftwm-extra]
 monitor = ${env:MONITOR}
 ;monitor-fallback = HDMI1
-width = 95%
-height = 33
-offset-x = 47
-offset-y = 10
-radius = 0
+width = 100%
+height = 30
+offset-x = 0
+offset-y = 0
+radius-top = 0
+radius-bottom = 0
+
 fixed-center = true
 bottom = false
 separator = 
@@ -342,21 +345,22 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-wm-restack = bspwm
+;wm-restack = bspwm
 override-redirect = true
 
 ; Enable support for inter-process messaging
 ; See the Messaging wiki page for more details.
 enable-ipc = true
 
-border-size = 2
-;border-left-size  = 0
-;border-right-size = 0
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = ${colors.foreground}
+;border-size = 0
+border-top-size = 3
+border-bottom-size = 0
+border-left-size  = 0
+border-right-size = 0
 
-padding-left = 5
+border-color = #00000000
+
+padding-left = 1
 padding-right = 5
 
 module-margin-left = 3
@@ -394,10 +398,10 @@ scroll-down = herbstclient use_index +1
 [bar/mainbar-bspwm]
 monitor = ${env:MONITOR}
 ;monitor-fallback = HDMI1
-width = 95%
-height = 33
-offset-x = 47
-offset-y = 10
+width = 100%
+height = 30
+offset-x = 0
+offset-y = 0
 radius = 0
 fixed-center = true
 bottom = false
@@ -416,12 +420,12 @@ override-redirect = true
 ; See the Messaging wiki page for more details.
 enable-ipc = true
 
-border-size = 2
-;border-left-size  = 0
-;border-right-size = 0
+border-size = 0
+border-left-size  = 0
+border-right-size = 0
 ;border-top-size = 0
 ;border-bottom-size = 25
-border-color = ${colors.foreground}
+border-color = #00000000
 
 padding-left = 5
 padding-right = 5
@@ -462,14 +466,14 @@ scroll-down = bspwm-deskprev
 [bar/mainbar-bspwm-extra]
 monitor = ${env:MONITOR}
 ;monitor-fallback = HDMI1
-width = 95%
-height = 33
-offset-x = 47
-offset-y = 10
-radius = 0
+width = 100%
+height = 30
+;offset-x = 1%
+;offset-y = 1%
+radius = 0.0
 fixed-center = true
-bottom = false
-separator = 
+bottom = true
+separator = |
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -484,15 +488,15 @@ override-redirect = true
 ; See the Messaging wiki page for more details.
 enable-ipc = true
 
-border-size = 2
-;border-left-size  = 0
-;border-right-size = 0
+border-size = 0
+;border-left-size = 0
+;border-right-size = 25
 ;border-top-size = 0
 ;border-bottom-size = 25
-border-color = ${colors.foreground}
+border-color = #00000000
 
-padding-left = 5
-padding-right = 5
+padding-left = 0
+padding-right = 1
 
 module-margin-left = 3
 module-margin-right = 3
@@ -602,7 +606,7 @@ label-mode-background = #FFBB00
 ;   %output%
 ; Default: %icon%  %name%
 ; focused = Active workspace on focused monitor
-label-focused = 
+label-focused = %icon%
 label-focused-background = ${colors.background}
 label-focused-foreground = ${colors.third}
 ;label-focused-underline = #6790eb
@@ -614,14 +618,14 @@ label-focused-padding = 2
 ;   %index%
 ; Default: %icon%  %name%
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = •
+label-unfocused = %icon%
 label-unfocused-padding = 2
 label-unfocused-background = ${colors.background}
 label-unfocused-foreground = ${colors.foreground}
 label-unfocused-underline =
 
 ; visible = Active workspace on unfocused monitor
-label-visible = 
+label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${colors.third}
 label-visible-padding = 2
@@ -632,7 +636,7 @@ label-visible-padding = 2
 ;   %index%
 ; Default: %icon%  %name%
 ; urgent = Workspace with urgency hint set
-label-urgent = 
+label-urgent = %icon%
 label-urgent-background = ${self.label-focused-background}
 label-urgent-foreground = ${colors.alert}
 label-urgent-padding = 2
@@ -654,38 +658,38 @@ enable-scroll = true
 reverse-scroll = true
 pin-workspaces = true
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
+ws-icon-0 = 1;1
+ws-icon-1 = 2;2
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
+ws-icon-8 = 9;9
+ws-icon-9 = 10;10
 ws-icon-default = " "
 
 
 format = <label-state>
 
-label-focused = 
+label-focused = %icon%
 label-focused-background = ${colors.background}
 label-focused-padding = 2
 label-focused-foreground =  ${colors.third}
 
-label-occupied = 
+label-occupied = %icon%
 label-occupied-padding = 2
 label-occupied-foreground =  ${colors.foreground}
 label-occupied-background = ${colors.background}
 
-label-urgent = 
+label-urgent = %icon%
 label-urgent-padding = 2
 label-urgent-foreground = ${colors.alert}
 label-urgent-background = ${colors.background}
 label-urgent-underline = ${colors.alert}
 
-label-empty = •
+label-empty = %icon%
 label-empty-foreground = ${colors.foreground}
 label-empty-padding = 2
 label-empty-background = ${colors.background}
@@ -918,7 +922,7 @@ format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.foreground-alt}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-label = %time%
+label = %date% %time%
 
 #################################################################
 
@@ -985,25 +989,25 @@ icon-9 = 10;
 format = <label-state>
 label-monitor = %name%
 
-label-active = 
+label-active = %icon%
 label-active-foreground = ${colors.third}
 label-active-background = ${colors.background}
 label-active-underline= ${colors.foreground-alt}
 label-active-padding = 2
 
-label-occupied = 
+label-occupied = %icon%
 label-occupied-foreground = ${colors.third}
 label-occupied-background = ${colors.background}
 label-occupied-padding = 2
 
-label-urgent = 
+label-urgent = %icon%
 label-urgent-foreground = ${colors.alert}
 label-urgent-background = ${colors.background}
 label-urgent-underline = ${colors.alert}
 label-urgent-padding = 2
 
 
-label-empty = •
+label-empty = %icon%
 label-empty-foreground = ${colors.foreground}
 label-empty-padding = 2
 format-foreground = ${colors.foreground}
