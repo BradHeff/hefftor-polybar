@@ -134,7 +134,7 @@ modules-right = discord volume memory1 filesystem battery date powermenu
 enable-ipc = true
 
 ; Fallback click handlers that will be called if
-; there's no matching module handler found.
+; theres no matching module handler found.
 click-left =
 click-middle =
 click-right =
